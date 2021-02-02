@@ -1,0 +1,35 @@
+html {
+    font-size: 100%; //more accsessible and controls size in browser
+    box-sizing: border-box; //includes padding in final width
+}
+
+*, *::before, *::after {// wildcard selector --> makes border-box included in all elements
+    box-sizing: inherit;
+} 
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Public Sans', sans-serif;
+    line-height: 1.3;
+}
+
+//flexbox
+
+.flex {
+    display: flex;
+
+    // flex properties
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    &-jc-c {
+        justify-content: center;
+    }
+
+    &-ai-c {
+        align-items: center;
+    }
+
+}
