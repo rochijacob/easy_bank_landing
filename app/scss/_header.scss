@@ -3,7 +3,7 @@
     //Hamburger Open Styles 
     &.open {
 
-        .header__menu {
+        .header__toggle {
             > span:first-child {
                 transform: rotate(45deg);
             }
@@ -22,7 +22,7 @@
     .overlay {
         opacity: 0; //display property can't be animated
         position: fixed;
-        top: 3.75rem;
+        top: 0px;
         right: 0px;
         bottom: 0px;
         left: 0px;
@@ -30,7 +30,10 @@
     }
 
     nav {
-        padding: 1.065rem 1.5rem; //80px tall
+        padding-top: 1.0625rem;
+        padding-bottom: 1.0625rem;
+        position: relative;
+        background: $white;
     }
 
 
@@ -43,7 +46,7 @@
 
     }
 
-    &__menu { //mobile menu
+    &__toggle { //mobile menu toggle
 
         > span {
             display: block;
@@ -60,6 +63,29 @@
             }
             
 
+    }
+
+    &__menu {
+        position: absolute;
+        width: calc(100% - 3rem);
+        left: 50%;
+        transform: translateX(-50%);
+        background: $white;
+        margin-top: 1.5rem;
+        padding: 1.625rem;
+        border-radius: 5px;
+        
+        a {
+            color: $darkBlue;
+            padding: 10px;
+            display: block;
+            text-align: center;
+        }
+
+        a:hover {
+            color: $darkBlueHover;
+            transition: 300ms ease-in-out;
+        }
     }
 
     &__links {
