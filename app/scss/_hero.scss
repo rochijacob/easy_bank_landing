@@ -62,7 +62,7 @@
                 content: "";
                 position: absolute;
                 height: 100%;
-                background-image: url('/images/bg-intro-desktop.svg');        
+                background-image: url('../../images/bg-intro-desktop.svg');        
                 background-repeat: no-repeat;
                 background-position: center bottom;
                 width: 150%;
@@ -82,24 +82,6 @@
             text-align: left;
         }
 
-        h1 {
-            font-weight: 300;
-            font-size: 2.375rem;
-
-            line-height: 1.15;
-            color: $darkBlue;
-            margin-bottom: 1.5rem;
-
-            @include breakpoint-up(large) {
-                font-size: $font-xlg;
-            }
-        }
-
-        p {
-            line-height: 1.5;
-            margin-bottom: 2.25rem;
-
-
-        }
+    
     }
 }
