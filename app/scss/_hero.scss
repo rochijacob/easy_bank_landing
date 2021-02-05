@@ -1,8 +1,13 @@
 .hero {
-    @include breakpoint-up(large){
-        display: flex;
-        align-items: center;
+    background-color: $veryLightGray;
+
+    .container {
+        @include breakpoint-up(large){
+            display: flex;
+            align-items: center;
+        }
     }
+    
     
 
     &__image {
@@ -14,15 +19,21 @@
         background-position: center center;//center howrizontaly and vetical
         min-height: 17.5rem;
 
+        @include breakpoint-up(medium){
+            min-height: 25rem;
+            background-position: center 70%;
+          }
+
         @include breakpoint-up(large){
-            flex: 1;
+            flex: 3;
             order: 2;
             min-height: 41rem;
-            background-image: url('../../images/bg-intro-desktop.svg');
-            background-position: left center;
+            background-image: none;
+            //background-image: url('../../images/bg-intro-desktop.svg');
+            //background-position: left center;
         }
 
-        &::before {
+        &::after {
             content: "";
             position: absolute;
             width: 100%;
@@ -32,15 +43,43 @@
             background-repeat: no-repeat;
             background-position: center bottom; 
             min-height: 17.5rem;
+
+            @include breakpoint-up(medium){
+                min-height: 52%;
+            }
+
+            @include breakpoint-up(large){
+                width: 120%;
+                height: 122%;
+                background-size: 94%;
+                background-position: center 150%;
+                left: 22%;
+            }
+        }
+
+        &::before {
+            @include breakpoint-up(large){
+                content: "";
+                position: absolute;
+                height: 100%;
+                background-image: url('/images/bg-intro-desktop.svg');        
+                background-repeat: no-repeat;
+                background-position: center bottom;
+                width: 150%;
+                background-size: 122%;
+                background-position: 0% 83%;
         }
 
     }
+}
 
     &__text {
         text-align: center;
 
         @include breakpoint-up(large){
-            flex: 1;
+            flex: 2;
+            order: 1;
+            text-align: left;
         }
 
         h1 {
@@ -50,11 +89,16 @@
             line-height: 1.15;
             color: $darkBlue;
             margin-bottom: 1.5rem;
+
+            @include breakpoint-up(large) {
+                font-size: $font-xlg;
+            }
         }
 
         p {
             line-height: 1.5;
             margin-bottom: 2.25rem;
+
 
         }
     }
