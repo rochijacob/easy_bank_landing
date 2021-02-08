@@ -50,9 +50,22 @@
         a {
             display: inline-block;
             height: 1.25rem;
+
+            svg path {
+                transition: fill 150ms ease-in-out;    
+            }
+
+            &:hover svg path {
+                fill: $limeGreen;
+            }
         }
+
         a:not(:last-child) {
             margin: 1rem;
+        }
+
+        a:last-child {
+            margin-left: 1rem;
         }
     }
 
@@ -62,10 +75,12 @@
         align-items: center;
         color: $grayishBlue;
         font-size: 0.9375rem;
+        
 
         @include breakpoint-up(large){
             justify-content: space-between;
             align-items: start;
+            padding-left: 2rem;
         }
 
         &.col1{
@@ -92,7 +107,7 @@
             transition: color 150ms ease-in-out;
 
             &:hover {
-                color: limegreen;
+                color: $limeGreen;
             }
         }
     }
